@@ -1,0 +1,27 @@
+.posts-container{
+    height: 500px;
+    width: 50%l
+    margin 10px auto;
+
+    .post{
+        border: 1px solid lightgray;
+        margin: 5px 0;
+    }
+
+    .poster{
+        display: flex;
+
+        .poster-image{
+            img{
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+            } 
+        }
+        
+        .poster-name{
+            font-size: 1.5rem;
+            font-weight: 600
+        }
+    }
+}

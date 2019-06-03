@@ -1,0 +1,15 @@
+
+.comment-container{
+    margin-left: 5px;
+    padding: 3px;
+    display: flex;
+
+    .comment-username{
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-right: 7px;
+    }
+    .comment{
+        font-size: 1.5rem;
+    }
+}
