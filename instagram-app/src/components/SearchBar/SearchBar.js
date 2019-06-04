@@ -12,10 +12,11 @@ const SearchBar = props => {
                 <span className = 'divider'>|</span>
                 <img src="./assets/1280px-Instagram_logo.svg.png" className = 'logo-text' />
             </div>
-            <div classname="search-input">
+            <div className="search-input">
                 <Search
                     placeholder="Search"
-                    onSearch={value => console.log(value)}
+                    value={props.searchTerm}
+                    onChange = {props.search}
                     style={{ width: 200 }}
                 />
             </div>

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './PostContainer.scss'
 
 const PostContainer = props => {
+    if(props.posts.length ===0 && props.searchTerm.length ===0) {return <h1>Loading Data...</h1>}
     return (
         <div className = 'posts-container'>
             {props.posts.map(post => <Post key = {post.id} post = {post} />)}
