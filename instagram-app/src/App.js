@@ -22,6 +22,7 @@ class App extends Component {
             searchTerm: event.target.value
         })
     }
+    
     render() {
         return (
             <div className = 'app-container'>
