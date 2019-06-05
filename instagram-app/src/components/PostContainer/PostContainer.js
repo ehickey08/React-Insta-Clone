@@ -3,11 +3,11 @@ import Post from './Post'
 import PropTypes from 'prop-types'
 import './PostContainer.scss'
 
-const PostContainer = props => {
-    if(props.posts.length ===0 && props.searchTerm.length ===0) {return <h1>Loading Data...</h1>}
+const PostContainer = ({posts, searchTerm, ...rest}) => {
+    if(posts.length ===0 && searchTerm.length ===0) {return <h1>Loading Data...</h1>}
     return (
         <div className = 'posts-container'>
-            {props.posts.map(post => <Post key = {post.id} post = {post} />)}
+            {posts.map(post => <Post key = {post.id} post = {post} {...rest} />)}
         </div>
     )
 }

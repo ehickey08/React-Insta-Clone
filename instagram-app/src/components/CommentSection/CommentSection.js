@@ -5,45 +5,22 @@ import CommentInput from './CommentInput';
 import './CommentSection.scss';
 
 class CommentSection extends Component {
-    state = {
-        comments: this.props.comments,
-        commentText: ''
-    }
-    
-
-    addNewComment = (event) => {
-        event.preventDefault();
-        const newComment = {
-            id: this.state.comments.length +1,
-            username: 'Anonymous',
-            text: this.state.commentText
-        }
-
-        this.setState(prevState => ({
-            comments: [...prevState.comments, newComment],
-            commentText: ''
-        }))
-    
-    }
-
-    commentInput = (event) => {
-        this.setState({
-            commentText: event.target.value
-        });
-    }
-
     render() {
         return (
             <div>
-                {this.state.comments.map(comment => 
+                {this.props.comments.map(comment => 
                 <Comment 
                     key = {comment.id} 
                     comment = {comment}
+                    deleteComment = {this.props.deleteComment}
+                    username = {this.props.username}
+                    post = {this.props.post}
                  />)}
                 <CommentInput 
-                    addComment = {this.addNewComment} 
-                    commentText = {this.state.commentText}
-                    commentInput = {this.commentInput}/>
+                    post = {this.props.post}
+                    addComment = {this.props.addNewComment} 
+                    commentText = {this.props.commentText}
+                    commentInput = {this.props.commentInput}/>
             </div>
         )
     }

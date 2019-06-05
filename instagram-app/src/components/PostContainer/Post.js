@@ -20,6 +20,18 @@ class Post extends React.Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        const posts = JSON.parse(localStorage.getItem('posts'));
+        const newPosts = posts.map(post => {
+            if(post.id === this.props.post.id){
+                post.likes = this.state.post.likes
+            }
+            return post;
+        });
+
+        localStorage.setItem('posts', JSON.stringify(newPosts));
+    }
+    
     render(){
         return(
             <div className = 'post'>
@@ -30,7 +42,15 @@ class Post extends React.Component {
                     <Icon type="message" className="post-icon"/>
                 </div>
                 <span className = "likes">{this.state.post.likes} likes</span>
-                <CommentSection comments = {this.props.post.comments} index = {this.props.post.id}/>
+                <CommentSection 
+                    post = {this.props.post} 
+                    commentText = {this.props.commentText} 
+                    comments = {this.props.post.comments} 
+                    index = {this.props.post.id} 
+                    addNewComment = {this.props.addNewComment} 
+                    commentInput = {this.props.commentInput} 
+                    deleteComment = {this.props.deleteComment}
+                    username = {this.props.username}/>
             </div>
         );
     }
