@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
 import CommentInput from './CommentInput';
-import './CommentSection.scss';
 
 class CommentSection extends Component {
     render() {
         return (
-            <div>
+            <>
                 {this.props.comments.map(comment => 
                 <Comment 
                     key = {comment.id} 
@@ -21,7 +20,7 @@ class CommentSection extends Component {
                     addComment = {this.props.addNewComment} 
                     commentText = {this.props.commentText}
                     commentInput = {this.props.commentInput}/>
-            </div>
+            </>
         )
     }
 }

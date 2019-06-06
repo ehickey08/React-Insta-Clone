@@ -1,14 +1,20 @@
 import React from 'react'
 import Post from './Post'
 import PropTypes from 'prop-types'
-import './PostContainer.scss'
+import styled from 'styled-components'
 
+const PostDiv = styled.div`
+    height: 500px;
+    max-width: 640px;
+    margin: 2rem auto;
+    
+`
 const PostContainer = ({posts, searchTerm, ...rest}) => {
     if(posts.length ===0 && searchTerm.length ===0) {return <h1>Loading Data...</h1>}
     return (
-        <div className = 'posts-container'>
+        <PostDiv>
             {posts.map(post => <Post key = {post.id} post = {post} {...rest} />)}
-        </div>
+        </PostDiv>
     )
 }
 

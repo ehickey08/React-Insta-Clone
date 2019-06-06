@@ -1,11 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import './CommentSection.scss';
 import {Input} from 'antd';
+import styled from 'styled-components'
 
+const CommentForm = styled.form`
+    margin: 1rem 0;
+    input{
+        border:none;
+        &:hover{
+            border: 1px solid #d9d9d9;
+        }
+    }
+`
 const CommentInput = props => {
     return (
-        <form onSubmit = {(e) => {
+        <CommentForm onSubmit = {(e) => {
             e.preventDefault();
             props.addComment(props.post.id)
         }}>
@@ -14,7 +22,7 @@ const CommentInput = props => {
                 required = 'Must fill out' 
                 value = {props.commentText} 
                 onChange = {(event) => props.commentInput(event)} />
-        </form>
+        </CommentForm>
     );
 }
 

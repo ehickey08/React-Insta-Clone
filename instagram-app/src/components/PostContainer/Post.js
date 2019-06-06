@@ -2,8 +2,30 @@ import React from 'react'
 import Poster from './Poster';
 import CommentSection from '../CommentSection/CommentSection'
 import PropTypes from 'prop-types'
-import './PostContainer.scss'
 import {Icon} from 'antd'
+import styled from 'styled-components'
+
+const PostDiv = styled.div`
+    border: 1px solid lightgray;
+    margin: 5px 0;
+
+    > img {
+        max-width: 620px;
+        margin: 0 10px;
+    }
+
+    .post-icon{
+        margin: 1rem;
+        font-size: 2.5rem;
+    }
+    
+`
+
+const LikeSpan = styled.span`
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 1rem;
+`
 
 class Post extends React.Component {
     state = {
@@ -34,14 +56,14 @@ class Post extends React.Component {
     
     render(){
         return(
-            <div className = 'post'>
+            <PostDiv>
                 <Poster posterImage = {this.props.post.thumbnailUrl} username = {this.props.post.username}/>
                 <img className = 'post-image' alt = 'post image' src={this.props.post.imageUrl} />
                 <div className = 'choice-container'>
                     <Icon type="heart" className="post-icon" onClick = {this.liker}/>
                     <Icon type="message" className="post-icon"/>
                 </div>
-                <span className = "likes">{this.state.post.likes} likes</span>
+                <LikeSpan>{this.state.post.likes} likes</LikeSpan>
                 <CommentSection 
                     post = {this.props.post} 
                     commentText = {this.props.commentText} 
@@ -51,7 +73,7 @@ class Post extends React.Component {
                     commentInput = {this.props.commentInput} 
                     deleteComment = {this.props.deleteComment}
                     username = {this.props.username}/>
-            </div>
+            </PostDiv>
         );
     }
 }

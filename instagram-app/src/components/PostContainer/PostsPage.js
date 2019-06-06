@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './PostContainer.scss'
 import dummyData from '../../dummy-data';
 import PostContainer from './PostContainer'
 import SearchBar from '../SearchBar/SearchBar';
@@ -83,7 +82,7 @@ class PostsPage extends Component {
     
     render() {
         return (
-            <div className = 'app-container'>
+            <>
                 <SearchBar search = {this.searchPost} searchTerm = {this.state.searchTerm}/>
                 <PostContainer
                     searchTerm = {this.state.searchTerm} 
@@ -94,8 +93,9 @@ class PostsPage extends Component {
                     commentInput = {this.commentInput}
                     commentText = {this.state.commentText}
                     deleteComment = {this.deleteComment}
-                    username = {this.state.username}/>            
-            </div>
+                    username = {this.state.username}
+                />
+            </>            
         );
     }
 }
