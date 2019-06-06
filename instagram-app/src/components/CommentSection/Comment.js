@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Icon} from 'antd';
-import {PosterName} from '../PostContainer/Poster'
+import {PosterName, PosterTime} from '../PostContainer/Poster'
 import styled from 'styled-components'
+import moment from 'moment'
 
 const CommentName = styled(PosterName)`
     margin-right: 7px;
@@ -31,6 +32,10 @@ const CommentDiv = styled.div`
         }
     }
 `
+
+const CommentTime = styled(PosterTime)`
+
+`
 const Comment = props => {
     return (
         <CommentDiv>
@@ -43,6 +48,7 @@ const Comment = props => {
             }
             <CommentName>{props.comment.username}</CommentName>
             <CommentText>{props.comment.text}</CommentText>
+            <CommentTime>{moment(props.comment.timestamp, "MMMM-Do-YYYY").fromNow()}</CommentTime>
         </CommentDiv>
     )
 }

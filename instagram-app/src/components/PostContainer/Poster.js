@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import moment from 'moment'
+
 
 const PosterDiv = styled.div`
     display:flex;
@@ -19,7 +21,11 @@ export const PosterName = styled.div`
     font-weight: 600
     margin-left: 1rem;
 `
-
+export const PosterTime = styled.div`
+    font-size: 1.3rem;
+    font-weight:200;
+    margin-left: 2rem;
+`
 const Poster = props => {
     return (
         <PosterDiv>
@@ -27,6 +33,7 @@ const Poster = props => {
             <PosterName>
                 {props.username}
             </PosterName>
+            <PosterTime>{moment(props.timestamp, "MMMM-Do-YYYY").fromNow()}</PosterTime> 
         </PosterDiv>
     )
 }

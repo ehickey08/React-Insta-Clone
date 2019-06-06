@@ -3,6 +3,7 @@ import dummyData from '../../dummy-data';
 import PostContainer from './PostContainer'
 import SearchBar from '../SearchBar/SearchBar';
 import Fuse from 'fuse.js'
+import moment from 'moment';
 
 class PostsPage extends Component {
     state = {
@@ -36,7 +37,8 @@ class PostsPage extends Component {
     addNewComment = (id) => {
         const newComment = {
             username: JSON.parse(localStorage.getItem('username')),
-            text: this.state.commentText
+            text: this.state.commentText,
+            timestamp: moment()
         }
         
         const newPosts = JSON.parse(localStorage.getItem('posts')).map(post => {

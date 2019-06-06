@@ -57,7 +57,7 @@ class Post extends React.Component {
     render(){
         return(
             <PostDiv>
-                <Poster posterImage = {this.props.post.thumbnailUrl} username = {this.props.post.username}/>
+                <Poster timestamp = {this.props.post.timestamp} posterImage = {this.props.post.thumbnailUrl} username = {this.props.post.username}/>
                 <img className = 'post-image' alt = 'post image' src={this.props.post.imageUrl} />
                 <div className = 'choice-container'>
                     <Icon type="heart" className="post-icon" onClick = {this.liker}/>
