@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 import './Login.scss'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import styled from 'styled-components'
+
+const LoginHeaderDiv = styled.div`
+    width: 75%;
+    margin: 0 auto;
+   
+`
+const InstaLogo = styled.img`
+    width: 100%;
+`
 
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
@@ -19,6 +29,10 @@ class NormalLoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
+        <>
+        <LoginHeaderDiv>
+            <InstaLogo src="./assets/1280px-Instagram_logo.svg.png"/>
+        </LoginHeaderDiv>
       <Form onSubmit={this.handleSubmit} className="login-form">
         <Form.Item>
           {getFieldDecorator('username', {
@@ -55,6 +69,7 @@ class NormalLoginForm extends React.Component {
           Or <a href="">register now!</a>
         </Form.Item>
       </Form>
+      </>
     );
   }
 }
