@@ -8,23 +8,26 @@ const dummyData = [
     imageUrl:
       "https://tk-assets.lambdaschool.com/69cf901b-f96d-466e-a745-ff2a01effac9_philz-image.jpg",
     likes: 400,
-    timestamp: "July 17th 2017, 12:42:40 pm",
+    timestamp: "May 14th 2019",
     comments: [
       {
         id: 1,
         username: "philzcoffee",
         text:
-          "We've got more than just delicious coffees to offer at our shops!"
+          "We've got more than just delicious coffees to offer at our shops!",
+          timestamp: "May 15th 2019",
       },
       {
         id: 2,
         username: "biancasaurus",
-        text: "Looks delicious!"
+        text: "Looks delicious!",
+        timestamp: "June 2nd 2019",
       },
       {
         id: 3,
         username: "martinseludo",
-        text: "Can't wait to try it!"
+        text: "Can't wait to try it!",
+        timestamp: "June 4th 2019",
       }
     ]
   },
@@ -36,32 +39,37 @@ const dummyData = [
     imageUrl:
       "https://tk-assets.lambdaschool.com/89d13918-b7a2-4b40-9658-f376ea3f6b59_37131538_213683546146400_1083714364399157248_n.jpg",
     likes: 4307,
-    timestamp: "July 15th 2017, 03:12:09 pm",
+    timestamp: "July 15th 2018",
     comments: [
       {
         id: 1,
         username: "twitch",
-        text: "Epic Street Fighter action here in Las Vegas at #EVO2017!"
+        text: "Epic Street Fighter action here in Las Vegas at #EVO2017!",
+        timestamp: "July 15th 2018"
       },
       {
         id: 2,
         username: "michaelmarzetta",
-        text: "Omg that match was crazy"
+        text: "Omg that match was crazy",
+        timestamp: "July 21th 2018"
       },
       {
         id: 3,
         username: "themexican_leprechaun",
-        text: "What a setup"
+        text: "What a setup",
+        timestamp: "July 31th 2018",
       },
       {
         id: 4,
         username: "dennis_futbol",
-        text: "It that injustice"
+        text: "It that injustice",
+        timestamp: "October 15th 2018",
       },
       {
         id: 5,
         username: "dennis_futbol",
-        text: "Is"
+        text: "Is",
+        timestamp: "November 15th 2018",
       }
     ]
   },
@@ -73,21 +81,24 @@ const dummyData = [
     imageUrl:
       "https://tk-assets.lambdaschool.com/43bf01f9-319c-469d-8cf5-0120fe1007f1_yosemite.jpg",
     likes: 5306,
-    timestamp: "July 14th 2017, 10:04:08 am",
+    timestamp: "May 14th 2017",
     comments: [
       {
         id: 1,
         username: "playhearthstone",
+        timestamp: "May 14th 2017",
         text: "Love this shot!"
       },
       {
         id: 2,
         username: "awaywetravel",
+        timestamp: "May 14th 2017",
         text: "Yosemite is my most favorite place in the universe"
       },
       {
         id: 3,
         username: "awesomebt28",
+        timestamp: "May 14th 2017",
         text: "I like how Half Dome looks so old and useless"
       }
     ]
